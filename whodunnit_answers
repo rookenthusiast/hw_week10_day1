@@ -1,0 +1,149 @@
+#JS Day 1 Homework
+
+Go through each sample code and work out what the output will be and explain what happened.
+
+### Episode 1
+```js
+var name = 'Keith';
+
+var printName = function() {
+  console.log('My name is ' + name );
+};
+
+printName();
+
+```
+// prints "My name is Keith"
+
+### Episode 2
+```js
+score = 5;
+
+var result = function() {
+  var score = 3;
+  return score;
+};
+
+console.log(result());
+
+```
+// returns 3 to terminal, the scope of the function sees 3
+
+### Episode 3
+```js
+var myAnimals = ['Chickens', 'Cats', 'Rabbits'];
+
+var listAnimals = function() {
+  myAnimals = ['Ducks', 'Dogs', 'Lions'];
+  for(var i=0;i<myAnimals.length; i++){
+    console.log(i + ": " + myAnimals[i]);
+  }
+}
+
+listAnimals();
+
+```
+//loops through myAnimals Array while i is less than the length and then prints i: + each element
+
+//1:'Ducks',
+//2:'Dogs',
+//3:'Lions'
+
+### Episode 4
+
+```js
+var suspectOne = 'Jay';
+var suspectTwo = 'Val';
+var suspectThree = 'Keith';
+var suspectFour = 'Rick';
+
+var allSuspects = function() {
+  var suspectThree = 'Harvey'
+  console.log('Suspects include: ' + suspectOne + ', ' + suspectTwo + ', ' + suspectThree + ', ' + suspectFour)
+};
+
+allSuspects();
+console.log( 'Suspect three is:' + suspectThree );
+```
+prints 'Suspects include: jay, Val, Harvey, Rick'
+prints 'Suspect three is:Keith'
+
+### Episode 5
+
+```js
+var detective = {
+  name : 'Ace Ventura',
+  pet : 'monkey'
+};
+
+var printName = function(detective) {
+  return detective.name
+};
+
+var detectiveInfo = function() {
+  detective['name'] = 'Poirot'
+  return printName(detective);
+};
+
+console.log(detectiveInfo());
+```
+prints Poirot
+
+### Episode 6
+```js
+var murderer = 'rick';
+
+var outerFunction = function() {
+  var murderer = 'marc';
+
+  var innerFunction = function() {
+    murderer = 'valerie';
+  }
+
+  innerFunction();
+}
+
+outerFunction();
+console.log('the murderer is ', murderer);
+```
+prints 'the murderer is, rick'
+
+### Episode 7 - Make up your own episode/s!
+
+var dinner = ["noodles", "chicken", "fish"];
+
+var eatDinner = function(array) {
+  var stomach = ["corn", "beef"];
+  for (food of array){
+  stomach.push(food);
+  }
+  console.log("I had " + stomach);
+}
+
+eatDinner(dinner);
+
+var animalTypes = ["feline", "reptile", "fish", "bird"]
+
+var animalNoise = function(animals){
+  for (animal for animals){
+    switch (animal){
+      case "feline":
+      console.log("meoww");
+      break;
+        case "reptile":
+        console.log("ssssss");
+      break;
+        case "fish":
+        console.log("bubbbbleessss");
+      break;
+        case "bird":
+        console.log("squak");
+    }
+  }
+}
+
+animalNoise(animalTypes);
+
+
+
+Make up your own episode which can be whatever you wish and the rest of the class will work out together what happened and what the output will be.
